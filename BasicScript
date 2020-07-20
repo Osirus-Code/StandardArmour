@@ -8,7 +8,16 @@
 ArmourspawnPerm: ML.Armour.Spawn
 Armourguiperm: ML.Armour.GUI
 AdminPerm: ML.Access.Admin
-
+NoPerm: &c(!) You do not have permission for this command.
 # basic commands
 
 Command /SAHelp:
+        Permission: ML.Access.Admin
+        Permission message: {@NoPerm}
+        Trigger:
+                Send ""
+                Send ""
+                Send ""
+                Send ""
+                Send ""
+                Send ""
