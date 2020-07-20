@@ -1,0 +1,14 @@
+# medieval lords 
+# standard armour and kit 
+# written and protected by ResolveDevelopers
+# code written by Osiris
+
+# basic config
+
+ArmourspawnPerm: ML.Armour.Spawn
+Armourguiperm: ML.Armour.GUI
+AdminPerm: ML.Access.Admin
+
+# basic commands
+
+Command /SAHelp:
