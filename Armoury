@@ -1,0 +1,145 @@
+command /armoury:
+	trigger:
+		wait 3 ticks
+		make player execute command "/firework"
+		open chest with 6 rows named "&c&lARMOURY" to player
+		format slot 0 of player with ender chest with name "&b&lCARBYNE GEAR MENU" with lore "&7Click here to view the custom armour" to close then run [make player execute command "cg store"]
+		format slot 4 of player with diamond sword with name "&c&lARMOURY SWORDS" with lore "&7Click here to open the weapon arsnal" to close then run [make player execute command "WeaponArmoury"]
+		format slot 8 of player with ender chest with name "&b&lOKIT MENU" with lore "&7Click here to view the OKit Kit menu" to close then run [make player execute command "okit"]
+		format slot 11 of player with iron helmet with name "&7&lIron Patience" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack" to close then run [make player execute command "armoirybuy 1 %player%"]
+		format slot 20 of player with iron chestplate with name "&7&lA Pair Of Iron Patience Lungs" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack" to close then run [make player execute command "armoirybuy 2 %player%"]
+		format slot 29 of player with iron leggings with name "&7&lIron Patience Knee Shields" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack" to close then run [make player execute command "armoirybuy 3 %player%"]
+		format slot 38 of player with iron boots with name "&7&lIron Patience Boots" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack" to close then run [make player execute command "armoirybuy 4 %player%"]
+		format slot 12 of player with iron helmet with name "&f&lWinter Soilders Hat" with lore "&7Lost in time...||&7Lost in space...||&7Lost forever the winter soilder will be|| &a+ 5 Defence ||&c+1 Attack" to close then run [make player execute command "armoirybuy 5 %player%"]
+		format slot 21 of player with iron chestplate with name "&f&lWinter Soilders Armoued Chest" with lore "&7Lost in time...||&7Lost in space...||&7Lost forever the winter soilder will be|| &a+ 4 Defence ||&c+3 Attack" to close then run [make player execute command "armoirybuy 6 %player%"]
+		format slot 30 of player with iron leggings with name "&f&lWinter Soilders Leggings" with lore "&7Lost in time...||&7Lost in space...||&7Lost forever the winter soilder will be|| &a+ 5 Defence ||&c- 2 Attack" to close then run [make player execute command "armoirybuy 7 %player%"]
+		format slot 39 of player with iron boots with name "&f&lWinter Soilders Boots" with lore "&7Lost in time...||&7Lost in space...||&7Lost forever the winter soilder will be|| &a- 2 Defence ||&c+3 Attack" to close then run [make player execute command "armoirybuy 8 %player%"]
+
+command /armoirybuy <text> <player>:
+	trigger:
+		if arg-1 is "1":
+			player's balance is larger than 9500
+			reduce the player's balance by 9500
+			send "&c&l- £9500"
+			make player execute command "/firework"
+			give player 1 Iron Helmet of protection 3 with name "&7&lIron Patience" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack|| &7Type: &cHelmet"
+			send "&a&lCongratulations you have successful purchased A Legendary Piece of armour!"
+			send "&cType: &7Helmet"
+			send "&cName: &7Iron Patience"
+			send "&cCost: &7£9500"
+			send "&cDefence: &7+ 2"
+			send "&cAttack: &7- 2"
+			send "&cTier: &7Ancient"
+		else:
+			if player's balance is smaller than 9500
+				send "&cSorry But you do not have the correct amount for this armour piece!" to player
+		if arg-1 is "2":
+			player's balance is larger than 18000
+			reduce the player's balance by 18000
+			send "&c&l- £9500"
+			make player execute command "/firework"
+			give player 1 iron chestplate of protection 3 with name "&7&lA Pair Of Iron Patience Lungs" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack"
+			send "&a&lCongratulations you have successful purchased A Legendary Piece of armour!"
+			send "&cType: &7Chestplate"
+			send "&cName: &7A Pair Of Iron Patience Lungs"
+			send "&cCost: &7£18000"
+			send "&cDefence: &7+ 2"
+			send "&cAttack: &7- 2"
+			send "&cTier: &7Ancient"
+		else:
+			send "&cSorry But you do not have the correct amount for this armour piece!" to player
+		if arg-1 is "3":
+			player's balance is larger than 9500
+			reduce the player's balance by 9500
+			send "&c&l- £9500"
+			make player execute command "/firework"
+			give player 1 iron leggings of protection 3 with name "&7&lIron Patience Knee Shields" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack"
+			send "&a&lCongratulations you have successful purchased A Legendary Piece of armour!"
+			send "&cType: &7Helmet"
+			send "&cName: &7Iron Patience"
+			send "&cCost: &7£9500"
+			send "&cDefence: &7+ 2"
+			send "&cAttack: &7- 2"
+			send "&cTier: &7Ancient"
+		else:
+			send "&cSorry But you do not have the correct amount for this armour piece!" to player
+		if arg-1 is "4":
+			player's balance is larger than 9500
+			reduce the player's balance by 9500
+			send "&c&l- £9500"
+			make player execute command "/firework"
+			give player 1 iron boots of protection 3 with name "&7&lIron Patience Boots" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack"
+			send "&a&lCongratulations you have successful purchased A Legendary Piece of armour!"
+			send "&cType: &7Helmet"
+			send "&cName: &7Iron Patience"
+			send "&cCost: &7£9500"
+			send "&cDefence: &7+ 2"
+			send "&cAttack: &7- 2"
+			send "&cTier: &7Ancient"
+		else:
+			send "&cSorry But you do not have the correct amount for this armour piece!" to player
+		if arg-1 is 1:
+			player's balance is larger than 9500
+			reduce the player's balance by 9500
+			send "&c&l- £9500"
+			make player execute command "/firework"
+			give player 1 Iron Helmet of protection 5 with name "&7&lIron Patience" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack|| &7Type: &cHelmet"
+			send "&a&lCongratulations you have successful purchased A Legendary Piece of armour!"
+			send "&cType: &7Helmet"
+			send "&cName: &7Iron Patience"
+			send "&cCost: &7£9500"
+			send "&cDefence: &7+ 2"
+			send "&cAttack: &7- 2"
+			send "&cTier: &7Ancient"
+		else:
+			send "&cSorry But you do not have the correct amount for this armour piece!" to player
+	
+command /armouryreload:
+	trigger:
+		send "&0&l&m==================="
+		wait 3 ticks
+		send "&aReloading Armoury... (0)"
+		wait 3 ticks
+		send "&aReloading Armoury... (10)"
+		wait 3 ticks
+		send "&aReloading Armoury... (20)"
+		wait 3 ticks
+		send "&aReloading Armoury... (30)"
+		wait 3 ticks
+		send "&aReloading Armoury... (40)"
+		wait 3 ticks
+		send "&aReloading Armoury... (50)"
+		wait 3 ticks
+		send "&aReloading Armoury... (60)"
+		wait 3 ticks
+		send "&aReloading Armoury... (70)"
+		wait 3 ticks
+		send "&aReloading Armoury... (80)"
+		wait 3 ticks
+		send "&aReloading Armoury... (90)"
+		wait 3 ticks
+		send "&cReloaded Carbyne Armoury Database &aSUCCESS"
+		wait 1 tick
+		send "&cReloaded Carbyne Armoury Locations &aSUCCESS"
+		wait 1 tick
+		send "&cReloaded Carbyne Armoury YAML Data &aSUCCESS"
+		wait 1 tick
+		send "&cReloaded Carbyne Armoury Connecting to server"
+		wait 3 ticks
+		send "&aConnection Successful"
+		wait 1 tick
+		send "&cReloaded Carbyne Armoury Connected to sever"
+		make console execute command "sk reload ARMOURY.SK"
+		wait 5 ticks
+		play "LEVEL_UP" to player
+		send "&aARMOURY RELOADED SUCCESSFULLY"
+		
+							
+on damage of a player:
+	attacker is a player
+	if lore of victim's chestplate and helmet and boots and leggings contains "&7With power comes responsability":
+		chance of 5%:
+			loop all players in radius 10 of victim:
+				strike lightning effect at loop-player
+				damage loop-player by 1 heart
+				stop
