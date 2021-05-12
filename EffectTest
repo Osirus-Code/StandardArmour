@@ -1,0 +1,38 @@
+on load:
+	broadcast "&b&oCarbyne Reload Successfull"
+	send "&f&l&m----------------" to console
+	send "&bName&f: &7&lCarbyne Gear" to console
+	send "&bVersion&f: &7&lCG-0001" to console
+	send "&bDeveloper&f: &7&lOsirus" to console
+	
+on load:
+	set {_Zues} to true
+	send "&7&lEFFECT: &fZues &aOnline" to player
+	set {_Doctor} to true
+	send "&7&lEFFECT: &fDoctor &aOnline" to player
+	
+command /CGEffect [<text>]:
+	permission: CG.Admin
+	permission message: "&c(!) Denied"
+	trigger:
+		if arg-1 is set:
+			if arg-1 is "Zues":
+				if {_Zues} is true:
+					send "&bZues &fis now &CDeactivated" to player
+					set {_Zues} to false
+				else if {_Zues} is false:
+					send "&bZues &fIs Now &cActived" to player
+					set {_Zues} to true
+					
+
+	
+on damage:
+	attacker is a player
+	if lore of attacker's held item contains "&fThunder 1":
+		if {_Zues} is true:
+			strike lightning effect at the victim
+			damage the victim by 1 heart
+			stop
+		if {_Zues} is false:
+			send "&bZues is Not active"
+				stop
