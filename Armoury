@@ -143,3 +143,15 @@ on damage of a player:
 				strike lightning effect at loop-player
 				damage loop-player by 1 heart
 				stop
+on join:
+	if player has permission "Treasure.kits.Archer":
+		set {_Archer} to true
+		
+if {_Archer} is true:
+	set {_Archer} to "&a&l✓"
+command /kits:
+	trigger:
+		wait 4 ticks
+		make console execute "/firework" at player
+		open chest with 1 row named "&b&oTreasure Kits" to player
+		format slot 0 of player with redstone named "&b&lTreasure Kits" with lore "&7Special Kits that upgrade as you use them||&7Every 3 days you can claim one||&7of these kits and level up their enchantments||||&fYou can obtain these by||&ffighting bosses, wining events and raiding peoples vaults||||&bAvailable  Kits||&f&l* &fArcher {_Archery}" to close then run [make player execute command "tkits"] 
