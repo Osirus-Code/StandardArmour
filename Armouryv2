@@ -1,0 +1,37 @@
+On load:
+	set {_ArmouryEffect} to true
+	set {_ArmouryMenus} to true
+	set {_Effect.IPatience} to true
+	set {_Effect.WSolider} to true
+	
+command /armoury:
+	trigger:
+		wait 3 ticks
+		make player execute command "/firework"
+		open chest with 6 rows named "&c&lARMOURY" to player
+		format slot 0 of player with ender chest with name "&b&lCARBYNE GEAR MENU" with lore "&7Click here to view the custom armour" to close then run [make player execute command "cg store"]
+		format slot 4 of player with diamond sword with name "&c&lARMOURY SWORDS" with lore "&7Click here to open the weapon arsnal" to close then run [make player execute command "WeaponArmoury"]
+		format slot 8 of player with ender chest with name "&b&lOKIT MENU" with lore "&7Click here to view the OKit Kit menu" to close then run [make player execute command "okit"]
+		format slot 11 of player with iron helmet with name "&7&lIron Patience" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack" to close then run [make player execute command "armoirybuy 1 %player%"]
+		format slot 20 of player with iron chestplate with name "&7&lA Pair Of Iron Patience Lungs" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack" to close then run [make player execute command "armoirybuy 2 %player%"]
+		format slot 29 of player with iron leggings with name "&7&lIron Patience Knee Shields" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack" to close then run [make player execute command "armoirybuy 3 %player%"]
+		format slot 38 of player with iron boots with name "&7&lIron Patience Boots" with lore "&7With power comes responsability||&a+ 2 Defence ||&c- 2 Attack" to close then run [make player execute command "armoirybuy 4 %player%"]
+		format slot 12 of player with iron helmet with name "&f&lWinter Soilders Hat" with lore "&7Lost in time...||&7Lost in space...||&7Lost forever the winter soilder will be|| &a+ 5 Defence ||&c+1 Attack" to close then run [make player execute command "armoirybuy 5 %player%"]
+		format slot 21 of player with iron chestplate with name "&f&lWinter Soilders Armoued Chest" with lore "&7Lost in time...||&7Lost in space...||&7Lost forever the winter soilder will be|| &a+ 4 Defence ||&c+3 Attack" to close then run [make player execute command "armoirybuy 6 %player%"]
+		format slot 30 of player with iron leggings with name "&f&lWinter Soilders Leggings" with lore "&7Lost in time...||&7Lost in space...||&7Lost forever the winter soilder will be|| &a+ 5 Defence ||&c- 2 Attack" to close then run [make player execute command "armoirybuy 7 %player%"]
+		format slot 39 of player with iron boots with name "&f&lWinter Soilders Boots" with lore "&7Lost in time...||&7Lost in space...||&7Lost forever the winter soilder will be|| &a- 2 Defence ||&c+3 Attack" to close then run [make player execute command "armoirybuy 8 %player%"]
+		
+		
+		
+		
+		
+		
+		
+every 15 seconds:
+    if player is wearing iron helmet named "&7&lIron Patience":
+		if player is wearing iron chestplate named "&7&lA Pair Of Iron Patience Lungs":
+			if player is wearing iron leggings named "&7&lIron Patience Knee Shields":
+				if player is wearing iron boots named "&7&lIron Patience Boots":
+					apply strength 2 to player
+						apply healthboost 1 to player
+							set {_IPatience.%uuid of player%} to true:
