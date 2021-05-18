@@ -1,0 +1,99 @@
+# core # 
+
+on load:
+	set {_Core} to true
+	
+	
+on join:
+  player does have permission "TreasureLords.Admin"
+  make player execute command "checksystem"
+  
+ 
+
+command /checksystem:
+	trigger:
+		send "&c&lSYSTEM CHECK" to player
+		wait 4 ticks
+		if {_ArmouryEffect} is true:
+			send "&b&oSystem:" to player
+			wait 1 tick
+			send "&7&oPinging Variable.ArmouryEffect" to player
+			wait 2 ticks
+			send "&7&oResponse: &aActive" to player
+			wait 3 ticks
+			send "&f&oVARIABLE: &bArmouryEffects&f: &a&oActive and Online&f: &b100%" to player
+			wait 3 ticks
+			if {_ArmourMenus} is true:
+				send "&b&oSystem:" to player
+				wait 1 tick
+				send "&7&oPinging Variable.ArmourMenu" to player
+				wait 2 ticks
+				send "&7&oResponse: &aActive" to player
+				wait 3 ticks
+				send "&f&oVARIABLE: &bArmourMenu&f: &a&oActive and Online&f: &b100%" to player
+				wait 3 ticks
+				if {_Effect.IPatience} is true:
+					send "&b&oSystem:" to player
+					wait 1 tick
+					send "&7&oPinging Variable.EffectsLib" to player
+					wait 2 ticks
+					send "&7&oResponse: &aActive" to player
+					wait 3 ticks
+					send "&f&oVARIABLE: &bArmourEffects.Lib&f: &a&oActive and Online&f: &b100%" to player
+					send "&aEffect&f: &7Iron Patience" to player
+					wait 3 ticks				
+					if {_Effects.WSolider} is true:
+						send "&b&oSystem:" to player
+						wait 1 tick
+						send "&7&oPinging Variable.EffectLib" to player
+						wait 2 ticks
+						send "&7&oResponse: &aActive" to player
+						wait 3 ticks
+						send "&f&oVARIABLE: &bArmourEffects.Lib&f: &a&oActive and Online&f: &b100%" to player
+						send "&aEffect&f: &7Winter Solider" to player
+						wait 3 ticks
+						if {_ArmouryBuy} is true:
+							send "&b&oSystem:" to player
+							wait 1 tick
+							send "&7&oPinging Variable.ArmourBuy" to player
+							wait 2 ticks
+							send "&7&oResponse: &aActive" to player
+							wait 3 ticks
+							send "&f&oVARIABLE: &bArmourBuy&f: &a&oActive and Online&f: &b100%" to player
+							wait 3 ticks
+							if {_Core} is true:
+								send "&7&l-----------------" to player
+								send "&cSystem Check&f: &aCoplete &f:: &5100&f% &7Online and Ready" to player
+								wait 1 tick
+								send "" to player
+								wait 1 tick
+								send "&c&oPlease find below a detailed list of  online services" to player 
+								wait 1 tick
+								send "&fArmouryMenu&f: &aActive" to player
+								wait 1 tick
+								send "&fArmouryBuy&f: &aActive" to player
+								wait 1 tick
+								send "&fArmouryEffect&f: &aActive" to player
+								wait 1 tick
+								send "&fEffects.IPatience&f: &aActive" to player
+								wait 1 tick
+								send "&fEffects.WSolider&f: &aActive" to player
+								wait 1 tick
+								send "&7&l-----------------" to player
+								else:
+									if {_ArmourEffect} is false:
+										send "&b&oSystem:" to player
+										wait 1 tick
+										send "&7&oPinging Variable.ArmouryEffect" to player
+										wait 2 ticks
+										send "&7&oResponse: &cNot Active" to player
+										wait 3 ticks
+										send "&f&oVARIABLE: &bArmouryEffects&f: &c&oNot Active and Offline&f: &b0%" to player
+										if {_ArmourMenus} is false:
+											send "&b&oSystem:" to player
+											wait 1 tick
+											send "&7&oPinging Variable.ArmourMenu" to player
+											wait 2 ticks
+											send "&7&oResponse: &cNot Active" to player
+											wait 3 ticks
+											send "&f&oVARIABLE: &bArmourMenu&f: &c&oNot Active and Offline&f: &b100%" to player
