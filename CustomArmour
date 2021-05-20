@@ -1,0 +1,107 @@
+# CUSTOM ARMOUR PURCHASE
+
+on load:
+    register new shaped recipe for iron helmet named "&7Stainless Steel Helmet" with lore "&bAbilities when using a full set:||&f&L- &fSpeed II||&f&l- &fStrenght I|| ||&7&oA full set of stainless steel is needed" using iron ingot, iron ingot, iron ingot, iron ingot, ait, iron ingot, air, obsidian, air
+	register new shaped recipe for iron chestplate named "&7Stainless Steel Chestplate" with lore "&bAbilities when using a full set:||&f&L- &fSpeed II||&f&l- &fStrenght I|| ||&7&oA full set of stainless steel is needed" using iron ingot, obsidian, iron ingot, iron ingot, iron ingot, iron ingot, iron ingot, iron ingot, iron ingot
+	register new shaped recipe for iron leggings named "&7Stainless Steel Leggings" with lore "&bAbilities when using a full set:||&f&L- &fSpeed II||&f&l- &fStrenght I|| ||&7&oA full set of stainless steel is needed" using iron ingot, iron ingot, iron ingot, iron ingot, air, iron ingot, air, iron ingot, obsidian, iron ingot
+	register new shaped recipe for iron boots named "&7Stainless Steel Boots" with lore "&bAbilities when using a full set:||&f&L- &fSpeed II||&f&l- &fStrenght I|| ||&7&oA full set of stainless steel is needed" using air, obsidian, air, iron ingot, air, iron ingot, iron ingot, air, iron ingot
+	register new shaped recipe for iron sworrd named "&7Stainless Steel Helmet" with lore "&2Set Ability:||&2You get speed II when using a full set of Stainless Steel Armor!" using air, air, air, lapis lazuli, air, lapis lazuli, lapis lazuli, air, lapis lazuli
+	 
+#register new shapeless recipe for diamond leggings named "&b&lSwag" using diamond named "&b&lSwag", diamond leggings
+every 15 seconds:
+    if {_SSteel.%uuid of player%} is false:
+        if player is wearing iron helmet named "&7Stainless Steel Helmet":
+            if player is wearing iron chestplate named "&2Lapis Chestplate":
+                if player is wearing iron leggings named "&7Stainless Steel Chestplate":
+                    if player is wearing iron boots named "&7Stainless Steel Helmet":
+                        apply swiftness 2 to player
+                        set {_SSteel.%uuid of player%
+every 15 seconds:
+    if {_SSteel.%uuid of player%} is true
+        if player is not wearing iron helmet named "&7Stainless Steel Helmet":
+            execute console command "effect clear %player%"
+            set {_SSteel.%uuid of player%} to false
+        if player is not wearing iron helmet named "&7Stainless Steel Chestplate":
+            execute console command "effect clear %player%"
+            set {_SSteel.%uuid of player%} to false
+        if player is not wearing iron helmet named "&7Stainless Steel Leggings":
+            execute console command "effect clear %player%"
+            set {_SSteel.%uuid of player%} to false
+        if player is not wearing iron helmet named "&7Stainless Steel Boots":
+            execute console command "effect clear %player%"
+            set {_SSteel.%uuid of player%} to false
+
+# code #
+
+command /Armoury:
+	trigger:
+		open chest with 3 rows named "&8&oChoose a Category..." to player
+		wait 4 tick
+		format slot 0 of player with blue glass pane named " " to be unstealable
+		format slot 1 of player with blue glass pane named " " to be unstealable
+		format slot 2 of player with blue glass pane named " " to be unstealable
+		format slot 3 of player with blue glass pane named " " to be unstealable
+		format slot 4 of player with blue glass pane named " " to be unstealable
+		format slot 5 of player with blue glass pane named " " to be unstealable
+		format slot 6 of player with blue glass pane named " " to be unstealable
+		format slot 7 of player with blue glass pane named " " to be unstealable
+		format slot 8 of player with blue glass pane named " " to be unstealable
+		format slot 9 of player with blue glass pane named " " to be unstealable
+		format slot 17 of player with blue glass pane named " " to be unstealable
+		format slot 18 of player with blue glass pane named " " to be unstealable
+		format slot 19 of player with blue glass pane named " " to be unstealable
+		format slot 20 of player with blue glass pane named " " to be unstealable
+		format slot 21 of player with blue glass pane named " " to be unstealable
+		format slot 22 of player with blue glass pane named " " to be unstealable
+		format slot 23 of player with blue glass pane named " " to be unstealable
+		format slot 24 of player with blue glass pane named " " to be unstealable
+		format slot 25 of player with blue glass pane named " " to be unstealable
+		format slot 26 of player with blue glass pane named " " to be unstealable
+		format slot 11 of player with black glass pane named " " to be unstealable
+		format slot 13 of player with black glass pane named " " to be unstealable
+		format slot 15 of player with black glass pane named " " to be unstealable
+		format slot 16 of player with black glass pane named " " to be unstealable
+		format slot 26 of player with blue glass pane named " " to be unstealable
+		format slot 10 of player with black glass pane named " " to be unstealable
+		format slot 12 of player with diamond chestplate named "&e&lUNLOCK ARMOUR" with lore "&7Click here to purchase||&7the rare ability armour!" to close then run [make player execute command "armouryarmour"]
+		format slot 14 of player with diamond sword named "&e&lUNLOCK WEAPONRY" with lore "&7Click here to purchase||&7the rare ability weaponry!" to close then run [make player execute command "armouryweapons"]
+		
+		
+command /armouryarmour:
+	trigger:
+		wait 4 ticks
+		open chest with 6 rows named "&c&lUNLOCK CUSTOM ARMOUR" to player
+		format slot 0 of player with black glass pane named " " to be unstealable
+		format slot 1 of player with black glass pane named " " to be unstealable
+		format slot 2 of player with black glass pane named " " to be unstealable
+		format slot 3 of player with black glass pane named " " to be unstealable
+		format slot 4 of player with black glass pane named " " to be unstealable
+		format slot 5 of player with black glass pane named " " to be unstealable
+		format slot 6 of player with black glass pane named " " to be unstealable
+		format slot 7 of player with black glass pane named " " to be unstealable
+		format slot 8 of player with black glass pane named " " to be unstealable
+		format slot 9 of player with black glass pane named " " to be unstealable
+		format slot 17 of player with black glass pane named " " to be unstealable
+		format slot 18 of player with black glass pane named " " to be unstealable
+		format slot 26 of player with black glass pane named " " to be unstealable
+		format slot 27 of player with black glass pane named " " to be unstealable
+		format slot 35 of player with black glass pane named " " to be unstealable
+		format slot 36 of player with black glass pane named " " to be unstealable
+		format slot 44 of player with black glass pane named " " to be unstealable
+		format slot 45 of player with black glass pane named " " to be unstealable
+		format slot 46 of player with black glass pane named " " to be unstealable
+		format slot 47 of player with black glass pane named " " to be unstealable
+		format slot 48 of player with black glass pane named " " to be unstealable
+		format slot 49 of player with black glass pane named " " to be unstealable
+		format slot 50 of player with black glass pane named " " to be unstealable
+		format slot 51 of player with black glass pane named " " to be unstealable
+		format slot 53 of player with black glass pane named " " to be unstealable
+		format slot 52 of player with black glass pane named " " to be unstealable
+		
+		if player's money is less than 10000:
+			format slot 10 of player with iron helmet named "&7Stainless Steel Helmet" with lore "&7Click here to purchase the||&7ability to a craft Stainless Steel Helmet.||||&dPrice: &a$10,000||||&c&lYOU CAN NOT||&c&lAFFORD THIS!||&e&oYour Balance: &a%player's money%||&e&oYou need: &a$%10000-(money of player)%" to be unstealable
+		if player's money is more than or equal to {@leatherHelm}:
+			format slot 10 of player with iron helmet named "&7Stainless Steel Helmet" with lore "&7Click here to purchase the||&7ability to a craft Stainless Steel helmet.||||&dPrice: &a$10,000||||&e&oYour Balance: &a%player's money%||&e&oAfter Purchase: &a$%(money of player)-10000%" to close then run [make console execute command "manuaddp %player% Treasure.craft.stainless.Helmet"]->[subtract 10000 from player's money]->[broadcast "&e&l&o%player% &a&ohas bought the ability to craft a &6	Stainless Steel Helmet!"]->[make player execute command "armouryarmour"]
+		if player has permission "{@leatherHelmPerm}":
+			format slot 10 of player with glowing Iron Helmet named "&7&lSTAINLESS STEEL HELMET" with lore "&r&a&lABILITY UNLOCKED!" to be unstealable
+		
