@@ -1,0 +1,29 @@
+on load:
+	set {_BungeeConnect} to true:
+	send "&bTreasureConnect &f&l➤	&bGrabbing data from Bungee.yml &f&l➤ &c20%" to player
+	wait 3 ticks
+	send "&bTreasureConnect &f&l➤	&bGrabbing data from Players.yml &f&l➤ &c40%" to player
+	wait 3 ticks
+	send "&bTreasureConnect &f&l➤	&bGrabbing data from Servers.yml &f&l➤ &c60%" to player
+	wait 3 ticks
+	send "&bTreasureConnect &f&l➤	&bGrabbing data from Permissions.yml &f&l➤ &c80%" to player
+	wait 3 ticks
+	send "&bTreasureConnect &f&l➤	&bGrabbing data from TreasureCore &f&l➤ &a100%" to player
+	wait 3 ticks
+	send "&bTreasureConnect &f&l➤	&bGrabbing data from Bungee.yml &f&l➤ &c20%" to console
+	wait 3 ticks
+	send "&bTreasureConnect &f&l➤	&bGrabbing data from Players.yml &f&l➤ &c40%" to console
+	wait 3 ticks
+	send "&bTreasureConnect &f&l➤	&bGrabbing data from Servers.yml &f&l➤ &c60%" to console
+	wait 3 ticks
+	send "&bTreasureConnect &f&l➤	&bGrabbing data from Permissions.yml &f&l➤ &c80%" to console
+	wait 3 ticks
+	send "&bTreasureConnect &f&l➤	&bGrabbing data from TreasureCore &f&l➤ &a100%" to console
+	
+command /serverinfo:
+	trigger:
+		wait 3 ticks
+		open chest with 1 row named "&6&nServer Information" to player
+		format slot 0 of player with blaze powder named "&6&lOrigin Realm" with lore "&c&lType &f➤ &aTowny||&c&lDifficulty &f➤ &aEasy||&c&lOnline Players &f➤ %bungee_towny%&F/ &c250|| ||&c&oVersion &f%server_version%||&cServer Stats &f➤||&cRam Usage &f%server_ram_used% &c/ &f%server_ram_free% ||&cWhitelist &f%server_has_whitelist%||&cTPS &f%server_tps%" to be unstealable
+	
+			
