@@ -2,7 +2,16 @@
 
 on load:
 	set {_Core} to true
-	
+
+#TO BE ADDED TO SYSTEM#
+#
+#{_CarbyneGear.menu}
+#{_CustomArmour} 
+#{_CrystalCore}
+#{_BungeeConnect}
+
+
+
 	
 on join:
   player does have permission "TreasureLords.Admin"
